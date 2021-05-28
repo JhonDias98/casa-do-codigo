@@ -43,6 +43,11 @@ dependencies {
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
+    //POSTGRE
+    //implementation("org.postgresql:postgresql:42.2.18")
+
+
+
 }
 
 
