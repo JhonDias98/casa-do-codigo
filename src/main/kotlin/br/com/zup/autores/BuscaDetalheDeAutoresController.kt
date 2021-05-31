@@ -5,11 +5,13 @@ import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.QueryValue
+import javax.transaction.Transactional
 
 @Controller("/autores")
 class BuscaDetalheDeAutoresController(val autorRepository: AutorRepository) {
 
     @Get
+    @Transactional
     fun listaPorEmail(@QueryValue(defaultValue = "") email: String): HttpResponse<Any> {
 
         if(email.isBlank()) {
@@ -34,6 +36,7 @@ class BuscaDetalheDeAutoresController(val autorRepository: AutorRepository) {
     api/autores/descricoes?descricao=teste&page=0&size=5&sort=id,desc&sort=nome,asc
      */
     @Get("/descricoes")
+    @Transactional
     fun listaPorDescricao(@QueryValue(defaultValue = "") descricao: String,
                            paginacao: Pageable): HttpResponse<Any> {
         val autoresEncontrados = autorRepository.findByDescricao(descricao, paginacao)
