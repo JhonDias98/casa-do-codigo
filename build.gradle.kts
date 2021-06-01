@@ -50,8 +50,8 @@ dependencies {
     //POSTGRE
     //implementation("org.postgresql:postgresql:42.2.18")
 
-
-
+    //Banco H2
+    testImplementation("com.h2database:h2")
 }
 
 
