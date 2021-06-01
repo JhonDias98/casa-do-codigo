@@ -19,7 +19,7 @@ interface AutorRepository : JpaRepository<Autor, Long>{
 
     //Native Query
     //Querys usando as nomeclaturas que estão no banco de dados
-    @Query(value = "SELECT a FROM autor a WHERE a.nome = :data",
+    @Query(value = "SELECT a FROM autor a WHERE a.nome = :nome",
         nativeQuery = true )
     fun buscaPorNome(nome: String): Optional<Autor>
 
