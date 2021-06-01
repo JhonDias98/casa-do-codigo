@@ -17,6 +17,9 @@ jpa:
         format_sql: true
         show_sql: true
         hbm2ddl.auto: update
+
+cep:
+  url: https://viacep.com.br/ws/
 #jpa.default.properties.hibernate.hbm2ddl.auto: update
 
 # POSTGRES
