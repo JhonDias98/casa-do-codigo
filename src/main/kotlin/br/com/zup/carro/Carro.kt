@@ -1,0 +1,11 @@
+package br.com.zup.carro
+
+import br.com.zup.utils.validation.Placa
+import io.micronaut.core.annotation.Introspected
+import javax.validation.constraints.NotBlank
+
+@Introspected
+data class Carro(
+    @field:NotBlank val modelo: String?,
+    @field:NotBlank @field:Placa val placa: String?
+)
